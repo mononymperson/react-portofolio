@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,400;0,600;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +15,35 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  --body: theme('colors.light');
+  --text: theme('colors.dark');
+
+  --primary: theme('colors.primary');
+  --primary-text: theme('colors.light');
+
+  --secondary: theme('colors.secondary');
+  --secondary-text: theme('colors.dark');
+}
+
+html[data-mode="dark"] {
+  --body: theme('colors.dark');
+  --text: theme('colors.light');
+
+  --primary: theme('colors.dark-primary');
+  --primary-text: theme('colors.dark');
+
+  --secondary: theme('colors.dark-secondary');
+  --secondary-text: theme('colors.light');
+}
+
+body {
+  background-color: var(--body);
+  color: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
 }
